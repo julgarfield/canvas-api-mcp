@@ -30,10 +30,10 @@ This is a private local project: `"private": true` is set, and nothing is publis
 
 ## 1. Install and build
 
-Requires Node 20 or later (built with `/opt/homebrew/bin/node`, v26).
+Requires Node 20 or later.
 
 ```sh
-cd /Users/juliangarfield/Desktop/cs_stuff/canvas_mcp
+cd /path/to/canvas_mcp     # wherever you cloned this repo
 npm install
 npm run build
 npm test
@@ -94,13 +94,18 @@ Don't put the token in client config files. The examples below rely on the Keych
 The launch command for both clients:
 
 ```
-/opt/homebrew/bin/node /Users/juliangarfield/Desktop/cs_stuff/canvas_mcp/dist/index.js
+/path/to/node /path/to/canvas_mcp/dist/index.js
 ```
+
+Replace the placeholders with absolute paths:
+
+- `/path/to/node`: the output of `which node`, e.g. `/opt/homebrew/bin/node` on Apple-silicon Homebrew. Use an absolute path, because GUI clients may not inherit your shell's `PATH`.
+- `/path/to/canvas_mcp`: the output of `pwd` in the repo folder.
 
 ### Claude Code
 
 ```sh
-claude mcp add --scope user canvas -- /opt/homebrew/bin/node /Users/juliangarfield/Desktop/cs_stuff/canvas_mcp/dist/index.js
+claude mcp add --scope user canvas -- /path/to/node /path/to/canvas_mcp/dist/index.js
 claude mcp list        # should show canvas ✓ connected
 ```
 
@@ -111,22 +116,22 @@ In a session, run `/mcp` to see the tools. Docs: <https://code.claude.com/docs/e
 Either run:
 
 ```sh
-codex mcp add canvas -- /opt/homebrew/bin/node /Users/juliangarfield/Desktop/cs_stuff/canvas_mcp/dist/index.js
+codex mcp add canvas -- /path/to/node /path/to/canvas_mcp/dist/index.js
 ```
 
 or add this to `~/.codex/config.toml`:
 
 ```toml
 [mcp_servers.canvas]
-command = "/opt/homebrew/bin/node"
-args = ["/Users/juliangarfield/Desktop/cs_stuff/canvas_mcp/dist/index.js"]
+command = "/path/to/node"
+args = ["/path/to/canvas_mcp/dist/index.js"]
 startup_timeout_sec = 20
 tool_timeout_sec = 120
 ```
 
 Then use `/mcp` in the Codex TUI to confirm. Docs: <https://learn.chatgpt.com/docs/extend/mcp?surface=cli>.
 
-Neither config contains the token. The server process reads it from the Keychain. If you upgrade Node and the Homebrew path changes, update both entries.
+Neither config contains the token. The server process reads it from the Keychain. If your Node path changes (for example, after switching version managers), update both entries.
 
 ## 4. Smoke tests
 
