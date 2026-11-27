@@ -1,0 +1,38 @@
+{
+  "name": "canvas-mcp",
+  "version": "0.1.0",
+  "description": "Personal read-only Canvas LMS MCP server (local stdio)",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "start": "node dist/index.js",
+    "smoke:mcp": "node dist/scripts/mcp-stdio-smoke.js",
+    "smoke:live": "node dist/scripts/live-smoke.js",
+    "token:setup": "sh scripts/keychain-setup.sh",
+    "token:check": "node dist/scripts/token-check.js",
+    "token:remove": "sh scripts/keychain-remove.sh"
+  },
+  "license": "UNLICENSED",
+  "type": "module",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "jszip": "^3.10.1",
+    "mammoth": "^1.13.0",
+    "unpdf": "^1.2.2",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.4",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.4"
+  },
+  "private": true,
+  "bin": {
+    "canvas-mcp": "dist/index.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

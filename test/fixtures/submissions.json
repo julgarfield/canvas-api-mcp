@@ -1,0 +1,28 @@
+[
+  { "name": "posted_zero", "assignment": { "points_possible": 10, "grading_type": "points" },
+    "submission": { "score": 0, "grade": "0", "workflow_state": "graded", "posted_at": "2026-10-01T12:00:00Z", "missing": false } },
+  { "name": "missing_auto_zero", "assignment": { "points_possible": 10 },
+    "submission": { "score": 0, "grade": "0", "workflow_state": "graded", "posted_at": "2026-10-01T12:00:00Z", "missing": true, "late_policy_status": "missing" } },
+  { "name": "missing_no_score", "assignment": { "points_possible": 10 },
+    "submission": { "score": null, "grade": null, "workflow_state": "unsubmitted", "posted_at": null, "missing": true } },
+  { "name": "submitted_not_graded", "assignment": { "points_possible": 10 },
+    "submission": { "score": null, "grade": null, "workflow_state": "submitted", "submitted_at": "2026-10-02T00:00:00Z", "posted_at": null } },
+  { "name": "graded_unposted", "assignment": { "points_possible": 10, "post_manually": true },
+    "submission": { "score": null, "grade": null, "workflow_state": "graded", "graded_at": "2026-10-03T00:00:00Z", "posted_at": null } },
+  { "name": "manual_posting_unknown", "assignment": { "points_possible": 10, "post_manually": true },
+    "submission": { "score": null, "grade": null, "workflow_state": "submitted", "posted_at": null } },
+  { "name": "excused", "assignment": { "points_possible": 10 },
+    "submission": { "score": null, "grade": null, "excused": true, "workflow_state": "graded" } },
+  { "name": "not_graded_assignment", "assignment": { "points_possible": 0, "grading_type": "not_graded" },
+    "submission": { "score": null, "grade": null, "workflow_state": "unsubmitted" } },
+  { "name": "graded_full",
+    "assignment": { "points_possible": 10, "allowed_attempts": 2,
+      "rubric": [ { "id": "c1", "description": "Correctness", "points": 10, "ratings": [ { "id": "r1", "description": "Mostly correct", "points": 8 } ] } ] },
+    "submission": { "score": 8, "grade": "8", "workflow_state": "graded", "posted_at": "2026-10-04T00:00:00Z", "attempt": 2,
+      "submission_comments": [ { "author_name": "Synthetic TA", "created_at": "2026-10-04T00:00:00Z", "comment": "Nice work",
+        "attachments": [ { "id": "9001", "display_name": "feedback.pdf", "content-type": "application/pdf", "size": 1234, "url": "https://canvas.example.edu/files/9001/download?verifier=abc" } ] } ],
+      "rubric_assessment": { "c1": { "points": 8, "rating_id": "r1", "comments": "" } },
+      "submission_history": [
+        { "attempt": 1, "score": null, "grade": null, "workflow_state": "submitted", "submitted_at": "2026-10-01T00:00:00Z", "posted_at": null },
+        { "attempt": 2, "score": 8, "grade": "8", "workflow_state": "graded", "submitted_at": "2026-10-02T00:00:00Z", "posted_at": "2026-10-04T00:00:00Z" } ] } }
+]

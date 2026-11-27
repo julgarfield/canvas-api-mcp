@@ -1,0 +1,10 @@
+node_modules/
+dist/
+coverage/
+.env
+.env.*
+*.log
+.DS_Store
+# never commit tokens or downloaded course material
+*.token
+downloads/
